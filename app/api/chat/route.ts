@@ -4,7 +4,7 @@ import { NextResponse } from "next/server"
 
 export const runtime = "nodejs"
 
-export async function POST(req: Request) {
+export const POST = async (req: Request) => {
   const { message } = await req.json()
   console.log(message)
 

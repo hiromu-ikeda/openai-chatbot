@@ -32,7 +32,9 @@ export default function Chat() {
             {m.content}
           </div>
         ))}
-        {isLoading && <Loader className="w-4 h-4 animate-spin" />}
+        <div className="flex justify-center">
+          {isLoading && <Loader className="w-4 h-4 animate-spin" />}
+        </div>
       </section>
       <form className="flex space-x-4" onSubmit={handleSubmit}>
         <Input

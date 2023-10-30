@@ -6,8 +6,10 @@ export const runtime = "nodejs"
 
 export async function POST(req: Request) {
   const { message } = await req.json()
+  console.log(message)
 
   const kouhaku = await readFile("public/kouhaku.csv", "utf-8")
+  console.log(kouhaku)
 
   const document = new Document({ text: kouhaku })
 
@@ -16,6 +18,7 @@ export async function POST(req: Request) {
   const queryEngine = index.asQueryEngine()
 
   const response = await queryEngine.query(message)
+  console.log(response.toString())
 
   return NextResponse.json(response.toString())
 }

@@ -2,6 +2,8 @@ import { readFile } from "fs/promises"
 import { Document, VectorStoreIndex } from "llamaindex"
 import { NextResponse } from "next/server"
 
+export const runtime = "nodejs"
+
 export async function POST(req: Request) {
   const { message } = await req.json()
 

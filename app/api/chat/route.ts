@@ -7,7 +7,7 @@ export const POST = async (req: Request) => {
   const { message } = await req.json()
   console.log(message)
 
-  const kouhaku = await readFile("public/kouhaku.csv", "utf-8")
+  const kouhaku = await readFile("./public/kouhaku.csv", "utf-8")
   console.log(kouhaku)
 
   // const document = new Document({ text: kouhaku })

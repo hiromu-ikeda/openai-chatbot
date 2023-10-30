@@ -1,5 +1,4 @@
 import { readFile } from "fs/promises"
-import { Document } from "llamaindex"
 import { NextResponse } from "next/server"
 import { join } from "path"
 
@@ -14,8 +13,7 @@ export const POST = async (req: Request) => {
   const kouhaku = await readFile(filePath, "utf-8")
   console.log(kouhaku)
 
-  const document = new Document({ text: kouhaku })
-  console.log(document)
+  // const document = new Document({ text: kouhaku })
 
   // const index = await VectorStoreIndex.fromDocuments([document])
 

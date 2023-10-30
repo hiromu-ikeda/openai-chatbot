@@ -9,8 +9,10 @@ export const POST = async (req: Request) => {
   const { message } = await req.json()
 
   const filePath = join(process.cwd(), "public", "kouhaku.csv")
+  console.log(filePath)
 
   const kouhaku = await readFile(filePath, "utf-8")
+  console.log(kouhaku)
 
   const document = new Document({ text: kouhaku })
   console.log(document)
